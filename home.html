@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this is gege blog</title>
+    <link rel="stylesheet" type="text/css" href="body.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    var typeWriter = {
+        msg: function (msg) {
+            return msg;
+        },
+        len: function () {
+            return this.msg.length;
+        },
+        seq:0,
+        speed:150,//打字时间
+        type: function () {
+            var _this =this;
+            document.getElementById('main').innerHTML = _this.msg.substring(0,this.seq);
+            if (_this.seq == _this.len()){
+                _this.seq = 0;
+                clearTimeout(t);
+            }else {
+                _this.seq++;
+                var t = setTimeout(function () {_this.type()},this.speed)
+            }
+        }
+    }
+    window.onload = function(){
+        var msg = "这是格格的博客,自动跳转到主页";
+        function getMsg(){
+            return msg;
+        }
+        typeWriter.msg = getMsg(msg);
+        typeWriter.type();
+
+    }
+    setTimeout(3000);
+
+
+
+
+
+</script>
+<body>
+<ul class="nav nav-tabs">
+  <li role="presentation" ><a href="#">Home</a></li>
+  <li role="presentation" class="active"><a href="home.html">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+<div id="main">
+
+</div>
+<div id="main1">
+<div><a href="http://so.hiqq.com.cn/">Google 学术搜索</a></div>
+<div><a href="https://g.zmirrordemo.com/">谷歌搜索</a></div>
+
+<form action="https://zz.xilesou.287865.com/search">
+	<font>直接搜索</font>
+	<input type="" name="">
+	<input type="submit" name="" value="Google搜索">
+	
+</form>
+
+</div>
+</body>
+</html>
